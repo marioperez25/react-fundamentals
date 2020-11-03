@@ -12,8 +12,10 @@ function UsernameForm({onSubmitUsername}) {
   const [input, setInput] = useState('')
   const [error, setError] = useState('')
 
-  function handleSubmit(){
+  function handleSubmit(event){
+    event.preventDefault()
     alert(inputEl.current.value)
+    setInput('')
   }
 
   function handleChange(){
@@ -23,7 +25,6 @@ function UsernameForm({onSubmitUsername}) {
       setError(null)
     } else {
       setError('Username must be lower case')
-
     }
   }
   // 🐨 get the value from the username input (using whichever method
